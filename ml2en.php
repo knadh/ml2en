@@ -2,7 +2,7 @@
 
 /*
 	(Phonemic) Romanization of Malayalam script
-	http://nadh.in/code/en2ml
+	http://nadh.in/code/ml2en
 
 	This algorithm transliterates Malayalam script to Roman characters ('Manglish')
 	Some heuristics try to retain a certain level phonemic fairness
