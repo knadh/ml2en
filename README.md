@@ -12,6 +12,9 @@ Licensed under GNU GPL v2 license.
 ### Output: 
 Vyaazhatthinte kaanthikakshethram sauravaathatthe cherukkunna mekhalayaanu vyaazhatthinte kaanthamandalam. Sooryanilekkulla dishayil ethaandu ezhupathu laksham kilomeettarum vipareetha dishayil shaniyute parikramanapatham vareyum ithu vyaapicchukitakkunnu. Saurayoothatthile grahangalute kaanthamandalangalil vacchu ettavum shakthiyeriyathaanu vyaazhatthintethu. Sauramandalam kazhinjaal saurayoothatthile ettavum valiya ghatanayum ithuthanne. Bhoomiyute kaanthamandalatthekkaal veethiyeriyathum parannathumaaya vyaazhatthinte kaanthamandalatthinte shakthi bhoomiyootethinte patthirattiyolavum vyaaptham 18000 irattiyolavumaanu.
 
+# Why?
+(Phonetic) Romanisation of Malayalam script can work decently well with phonetic search algorithms (for example, along with the Metaphone or Soundex algorithms). Could also potentially help people learning the language.
+
 # Usage
 The algorithm's available in three different languages, Python, Javascript, and PHP.
 
