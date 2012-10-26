@@ -1,5 +1,5 @@
 # ml2en (Python, Javascript, PHP)
-### An algorithm that transliterates Malayalam script to Roman / Latin characters (commonly 'Manglish') with relative phonetic fairness
+### An algorithm to transliterate Malayalam script to Roman / Latin characters (commonly 'Manglish') with relative phonetic fairness
 Kailash Nadh, October 2012
 
 Documentation: http://kailashnadh.name/code/ml2en
@@ -21,7 +21,7 @@ The algorithm's available in three different languages, Python, Javascript, and 
 
 ### Python
 ```python
-import ml2en
+from ml2en import ml2en
 
 converter = ml2en()
 result = converter.transliterate(ml_str)
