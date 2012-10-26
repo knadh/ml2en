@@ -1,0 +1,129 @@
+<!DOCTYPE>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>ml2en Javascript test</title>
+	<script src="ml2en.js"></script>
+
+	<style>
+		body {
+			background: #eee;
+			font-family: 'Helvetica Neue', 'Helvetica', Arial, serif;
+			font-size: 12px;
+			color: #333;
+		}
+		#main {
+			background: #fff;
+			padding: 15px;
+			margin: 40px auto 30px auto;
+			width: 80%;
+			box-shadow: 0 0 5px #ccc;
+			border-top: 10px solid #ccc;
+		}
+		.buttons a {
+			background: #FF4C00;
+			padding: 4px 8px;
+			color: #fff;
+			text-decoration: none;
+			border-radius: 5px;
+		}
+		.buttons a:hover {
+			background: #000;
+		}
+		.from {
+			width: 49%;
+			float: left;
+		}
+		.to {
+			width: 49%;
+			float: right;
+		}
+		textarea {
+			width: 100%;
+			height: 60%;
+			font-size: 1.5em;
+			padding: 15px;
+		}
+		a {
+			color: #000;
+		}
+		pre {
+			background: #f5f5f5;
+			padding: 10px;
+			margin-bottom: 20px;
+		}
+		.credit {
+			margin-top: 15px;
+			font-size: 11px;
+		}
+		.clear {
+			clear: both;
+		}
+	</style>
+</head>
+<body>
+
+<div id="main">
+	<h1>ml2en (Python, Javascript, PHP)</h1>
+	<p>
+		An algorithm tp transliterate Malayalam script to Roman / Latin characters (commonly 'Manglish') with relative phonetic fairness
+	</p>
+	<p class="buttons">
+		<a href="http://github.com/knadh/ml2en">GitHub page</a> <a href="https://github.com/knadh/ml2en/zipball/master">Download ZIP</a>
+	</p>
+	<div class="from">
+		<h2>Paste Malayalam input</h2>
+		<textarea id="from">വ്യാഴത്തിന്റെ കാന്തികക്ഷേത്രം സൗരവാതത്തെ ചെറുക്കുന്ന മേഖലയാണ്‌ വ്യാഴത്തിന്റെ കാന്തമണ്ഡലം. സൂര്യനിലേക്കുള്ള ദിശയിൽ ഏതാണ്ട് എഴുപത് ലക്ഷം കിലോമീറ്ററും വിപരീത ദിശയിൽ ശനിയുടെ പരിക്രമണപഥം വരെയും ഇത് വ്യാപിച്ചുകിടക്കുന്നു. സൗരയൂഥത്തിലെ ഗ്രഹങ്ങളുടെ കാന്തമണ്ഡലങ്ങളിൽ വച്ച് ഏറ്റവും ശക്തിയേറിയതാണ്‌ വ്യാഴത്തിന്റേത്. സൗരമണ്ഡലം കഴിഞ്ഞാൽ സൗരയൂഥത്തിലെ ഏറ്റവും വലിയ ഘടനയും ഇതുതന്നെ. ഭൂമിയുടെ കാന്തമണ്ഡലത്തെക്കാൾ വീതിയേറിയതും പരന്നതുമായ വ്യാഴത്തിന്റെ കാന്തമണ്ഡലത്തിന്റെ ശക്തി ഭൂമിയൂടേതിന്റെ പത്തിരട്ടിയോളവും വ്യാപ്തം 18000 ഇരട്ടിയോളവുമാണ്‌.</textarea>
+	</div>
+	<div class="to">
+		<h2>Romanized ('Manglish') output</h2>
+		<textarea id="to"></textarea>
+	</div>
+	<div class="clear"> </div>
+
+
+	<div class="usage">
+		<h1>Usage</h1>
+		The algorithm's available in three different languages, Python, Javascript, and PHP.
+
+<h3>Python</h3>
+<pre>
+from ml2en import ml2en
+
+converter = ml2en()
+result = converter.transliterate(ml_str)
+</pre>
+
+<h3>Javascript</h3>
+<pre>
+&lt;script src="ml2en.js">&lt;/script&gt;
+&lt;script&gt;
+	var result = ml2en.transliterate(ml_str);
+&lt;/script&gt;
+</pre>
+
+<h3>PHP</h3>
+<pre>
+&lt;?php
+	require 'ml2en.php';
+
+	$result = ml2en::transliterate($ml_str);
+?&gt;
+</pre>
+
+	</div>
+
+	<div class="credit">
+		<a href="http://nadh.in">Kailash Nadh</a>, October 2012.
+	</div>
+</div>
+<script>
+	document.getElementById('to').value = ml2en(document.getElementById('from').value);
+	document.getElementById('from').onkeyup = function() {
+		document.getElementById('to').value = ml2en(this.value);
+	};
+
+</script>
+
+</body>
+</html>
