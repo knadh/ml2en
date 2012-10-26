@@ -37,6 +37,6 @@ result = converter.transliterate(ml_str)
 <?php
 	require 'ml2en.php';
 
-	result = ml2en::transliterate($ml_str);
+	$result = ml2en::transliterate($ml_str);
 ?>
 ```
