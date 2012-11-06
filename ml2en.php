@@ -19,7 +19,7 @@ class ml2en {
 
 	private static $_vowels = array(
 		"അ" => "a", "ആ" => "aa", "ഇ" => "i", "ഈ" => "ee", "ഉ" => "u", "ഊ" => "oo", "ഋ" => "ru",
-		"എ" => "e", "ഏ" => "e", "ഐ" => "ai", "ഒ" => "o", "ഓ" => "o", "ഔ" => "au", "ഃ" => "ha"
+		"എ" => "e", "ഏ" => "e", "ഐ" => "ai", "ഒ" => "o", "ഓ" => "o", "ഔ" => "au"
 	);
 
 	private static $_compounds = array(
@@ -54,7 +54,8 @@ class ml2en {
 		"ാ" => "aa", "ി" => "i", "ീ" => "ee",
 		"ു" => "u", "ൂ" => "oo", "ൃ" => "ru",
 		"െ" => "e", "േ" => "e", "ൈ" => "y",
-		"ൊ" => "o", "ോ" => "o","ൌ" => "ou", "ൗ" => "au"
+		"ൊ" => "o", "ോ" => "o","ൌ" => "ou", "ൗ" => "au",
+		"ഃ" => "a"
 	);
 
 	// ______ transliterate a malayalam string to english phonetically
