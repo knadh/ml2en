@@ -126,7 +126,7 @@ class ml2en:
 		exp = re.compile( '((' + '|'.join(glyphs.keys()) + ')(' + '|'.join(self.__modifiers.keys()) + '))' )
 		matches = exp.findall(input)
 
-		# if yes, replace the glpyh with it's roman equivalent, and the modifier with its
+		# if yes, replace the glpyh with its roman equivalent, and the modifier with its
 		if matches != None:
 			for match in matches:
 				input = input.replace( match[0], glyphs[match[1]] + self.__modifiers[ match[2] ]);

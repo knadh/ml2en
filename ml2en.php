@@ -125,7 +125,7 @@ class ml2en {
 		// see if a given set of glyphs have modifiers trailing them
 		preg_match_all("/(".implode("|", array_keys($glyphs)).")(". implode('|', array_keys(self::$_modifiers) ).")/u", $input, $match);
 
-		// if yes, replace the glpyh with it's roman equivalent, and the modifier with its
+		// if yes, replace the glpyh with its roman equivalent, and the modifier with its
 		if(isset($match[0])) {
 			for($n=0; $n<count($match[0]); $n++) {
 				$input = preg_replace("/".$match[0][$n]."/u", $glyphs[ $match[1][$n] ] . self::$_modifiers[ $match[2][$n] ], $input);

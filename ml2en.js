@@ -151,7 +151,7 @@ var ml2en = function(input) {
 		var match = 0,
 			re = new RegExp("(" + _getKeys(glyphs).join('|') + ")(" + _getKeys(_modifiers).join('|') + ")", 'g');
 
-		// if yes, replace the glpyh with it's roman equivalent, and the modifier with its
+		// if yes, replace the glpyh with its roman equivalent, and the modifier with its
 		while(match != null) {
 			match = re.exec(input);
 			if(match)
