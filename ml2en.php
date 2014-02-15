@@ -59,7 +59,7 @@ class ml2en {
 	);
 
 	// ______ transliterate a malayalam string to english phonetically
-	function transliterate($input) {
+	public static function transliterate($input) {
 		// replace zero width non joiners
 		$input = preg_replace("/\xE2\x80\x8C/u", '', $input);
 
