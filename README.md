@@ -31,7 +31,7 @@ result = converter.transliterate(ml_str)
 ```javascript
 <script src="ml2en.js"></script>
 <script>
-	var result = ml2en.transliterate(ml_str);
+	var result = ml2en(ml_str);
 </script>
 ```
 
