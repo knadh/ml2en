@@ -4,26 +4,16 @@
 # Python 3 script
 
 '''
-	(Phonemic) Romanization of Malayalam script
-	http://nadh.in/code/ml2en
-
-	This algorithm transliterates Malayalam script to Roman characters ('Manglish')
-	Some heuristics try to retain a certain level phonemic fairness
-
-
-	This work is licensed under GPL v2
-	___________________
-
-	Kailash Nadh, 2012
-	http://nadh.in
+	Credit : Kailash Nadh, 2012
+		 http://nadh.in
 '''
 
 import re
 
 class ml2en:
 	__vowels = {
-		"അ": "a", "ആ": "aa", "ഇ": "i", "ഈ": "ee", "ഉ": "u", "ഊ": "oo", "ഋ": "ru",
-		"എ": "e", "ഏ": "e", "ഐ": "ai", "ഒ": "o", "ഓ": "o", "ഔ": "au"
+		"अ": "a", "आ": "aa", "इ": "e", "ई": "ee", "उ": "u", "ऊ": "oo", "ऋ": "r",
+		"ऌ": "l", "ऍ": "e", "ऎ": "aai", "ओ": "o", "औ": "au"
 	}
 
 	__compounds = {
@@ -39,27 +29,28 @@ class ml2en:
 	}
 
 	__consonants = {
-		"ക": "k", "ഖ": "kh", "ഗ": "g", "ഘ": "gh", "ങ": "ng",
-		"ച": "ch", "ഛ": "chh", "ജ": "j", "ഝ": "jh", "ഞ": "nj",
-		"ട": "t", "ഠ": "dt", "ഡ": "d", "ഢ": "dd", "ണ": "n",
-		"ത": "th", "ഥ": "th", "ദ": "d", "ധ": "dh", "ന": "n",
-		"പ": "p", "ഫ": "ph", "ബ": "b", "ഭ": "bh", "മ": "m",
-		"യ": "y", "ര": "r", "ല": "l", "വ": "v",
-		"ശ": "sh", "ഷ": "sh", "സ": "s","ഹ": "h",
-		"ള": "l", "ഴ": "zh", "റ": "r"
+		"क": "ka", "ख": "kha", "ग": "ga", "घ": "gha", "ङ": "nga",
+		"च": "ch", "छ": "cha", "ज": "ja", "झ": "jha", "ञ": "nya",
+		"ट": "tta", "ठ": "ttha", "ड": "dda", "ढ": "ddha", "ण": "na",
+		"त": "ta", "थ": "tha", "द": "da", "ध": "dha", "ऩ": "nnnna",
+		"प": "pa", "फ": "pha", "ब": "ba", "भ": "bha", "म": "ma",
+		"य": "ya", "र": "ra", "ऱ": "rra", "ल": "la",
+		"ळ": "lla", "ऴ": "lla", "व": "va","श": "sha",
+		"ष": "ssa", "स": "sa", "ह": "ha", "क़" : "qa", "ख़":"khha", "ग़": "ghha",    
+		"ज़": "za", "ड़": "dha", "ढ़" : "ddha", "फ़": "fa", "य़": "yya"
 	}
-
+	/*
 	__chil = {
 		"ൽ": "l", "ൾ": "l", "ൺ": "n",
 		"ൻ": "n", "ർ": "r", "ൿ": "k"
-	}
+	}*/
 
 	__modifiers = {
-		"ു്": "u", "ാ": "aa", "ി": "i", "ീ": "ee",
-		"ു": "u", "ൂ": "oo", "ൃ": "ru",
+		"ा": "aa", "ि": "i", "ी": "ii", "$ु": "u",
+		"$ू": "uu", "$ृ": "r", "$ॄ": "rr",
 		"െ": "e", "േ": "e", "ൈ": "y",
-		"ൊ": "o", "ോ": "o","ൌ": "ou", "ൗ": "au",
-		"ഃ": "a"
+		"$ॅ": "e", "$े": "e", "$ै": "ai", "ॉ": "o",
+		"ो": "o", "ौ" : "au"
 	}
 
 
@@ -102,12 +93,12 @@ class ml2en:
 		for k, v in self.__vowels.items():
 			input = input.replace( k, v )
 
-		# chillu glyphs
-		for k, v in self.__chil.items():
-			input = input.replace( k, v )
+		//# chillu glyphs
+		//for k, v in self.__chil.items():
+		//	input = input.replace( k, v )
 
-		# anusvaram 'am' at the end
-		input = input.replace( 'ം', 'm')
+		//# anusvaram 'am' at the end
+		//input = input.replace( 'ം', 'm')
 
 		# replace any stray modifiers that may have been left out
 		for k, v in self.__modifiers.items():
