@@ -20,11 +20,12 @@ The algorithm's available in three different languages, Python, Javascript, and 
 
 
 ### Python
+
+Install with `pip3 install ml2en`
+
 ```python
 from ml2en import ml2en
-
-converter = ml2en()
-result = converter.transliterate(ml_str)
+print(ml2en.transliterate(ml_str))
 ```
 
 ### Javascript
