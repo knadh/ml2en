@@ -11,7 +11,7 @@ setup(
 	name="ml2en",
 	version="v1.0.0",
 	description="A transliteration algorithm to transliterate Malayalam unicode strings to 'Manglish'",
-	long_description_content_type='text/markdown',
+	long_description_content_type="text/markdown",
 	long_description=readme,
 	author="Kailash Nadh",
 	author_email="kailash.nadh@gmail.com",

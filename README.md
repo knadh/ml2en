@@ -1,6 +1,5 @@
 # ml2en (Python, Javascript, PHP)
-### An algorithm to transliterate Malayalam script to Roman / Latin characters (commonly 'Manglish') with reasonable phonetic fairness
-Kailash Nadh, October 2012
+An algorithm to transliterate phonetically transliterate Malayalam Unicode strings to Roman / Latin characters (_Manglish_).
 
 Documentation: http://kailashnadh.name/code/ml2en
 
@@ -25,14 +24,14 @@ Install with `pip3 install ml2en`
 
 ```python
 from ml2en import ml2en
-print(ml2en.transliterate(ml_str))
+print(ml2en.transliterate("ഭൂമിയുടെ"))
 ```
 
 ### Javascript
 ```javascript
 <script src="ml2en.js"></script>
 <script>
-	var result = ml2en(ml_str);
+	alert(ml2en("ഭൂമിയുടെ"));
 </script>
 ```
 
@@ -40,7 +39,6 @@ print(ml2en.transliterate(ml_str))
 ```php
 <?php
 	require 'ml2en.php';
-
-	$result = ml2en::transliterate($ml_str);
+	echo ml2en::transliterate("ഭൂമിയുടെ");
 ?>
 ```
