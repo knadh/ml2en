@@ -1,11 +1,18 @@
 #!/usr/bin/env python
 
 from setuptools import setup
+import io
+
+
+with io.open('README.md', 'rt', encoding='utf8') as f:
+    readme = f.read()
 
 setup(
 	name="ml2en",
-	version="1.0",
-	description="A transliteration algorithm to transliterate Malayalam unicode to 'Manglish'",
+	version="v1.0.0",
+	description="A transliteration algorithm to transliterate Malayalam unicode strings to 'Manglish'",
+	long_description_content_type='text/markdown',
+	long_description=readme,
 	author="Kailash Nadh",
 	author_email="kailash.nadh@gmail.com",
 	url="https://github.com/knadh/ml2en",
